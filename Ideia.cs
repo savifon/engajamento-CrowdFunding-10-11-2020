@@ -43,9 +43,10 @@ class Ideia {
 		valorDoado = 0;
 	}
 
-	public Ideia (string t, string d, string a) {
+	public Ideia (string t, string d, string a, Usuario u) {
 		titulo = t;
 		descricao = d;
 		area = a;
+		donoIdeia = u;
 	}
 }

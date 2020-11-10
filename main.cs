@@ -3,5 +3,31 @@ using System;
 class MainClass {
 	public static void Main (string[] args) {
     Console.WriteLine("Seja bem-vindo(a)!");
+
+		char continuar = 's';
+		while (continuar == 's') {
+			string nomeUsuario;
+			int idadeUsuario;
+
+			Console.Write("Digite o seu nome >> ");
+			nomeUsuario = Console.ReadLine();
+			Console.Write("Digite a sua idade >> ");
+			idadeUsuario = int.Parse(Console.ReadLine());
+			Usuario novoUsuario = new Usuario(nomeUsuario, idadeUsuario);
+
+			string tituloIdeia, descricaoIdeia, areaIdeia;
+			
+			Console.Write("Digite o nome da sua ideia >> ");
+			tituloIdeia = Console.ReadLine();
+			Console.Write("Descreva a sua ideia >> ");
+			descricaoIdeia = Console.ReadLine();
+			Console.Write("Informe a área de aplicação da sua idea >> ");
+			areaIdeia = Console.ReadLine();
+
+			Ideia novaIdeia = new Ideia(tituloIdeia, descricaoIdeia, areaIdeia, novoUsuario);
+
+			Console.Write("Deseja cadastrar mais? s/n >> ");
+			continuar = char.Parse(Console.ReadLine());
+		}
   }
 }
