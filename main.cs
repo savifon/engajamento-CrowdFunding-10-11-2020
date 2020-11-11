@@ -4,17 +4,19 @@ class MainClass {
 	public static void Main (string[] args) {
     Console.WriteLine("Seja bem-vindo(a)!");
 
+		Votar campanha = new Votar();
+
+		string nomeUsuario;
+		int idadeUsuario;
+
+		Console.Write("Digite o seu nome >> ");
+		nomeUsuario = Console.ReadLine();
+		Console.Write("Digite a sua idade >> ");
+		idadeUsuario = int.Parse(Console.ReadLine());
+		Usuario novoUsuario = new Usuario(nomeUsuario, idadeUsuario);
+
 		char continuar = 's';
 		while (continuar == 's') {
-			string nomeUsuario;
-			int idadeUsuario;
-
-			Console.Write("Digite o seu nome >> ");
-			nomeUsuario = Console.ReadLine();
-			Console.Write("Digite a sua idade >> ");
-			idadeUsuario = int.Parse(Console.ReadLine());
-			Usuario novoUsuario = new Usuario(nomeUsuario, idadeUsuario);
-
 			string tituloIdeia, descricaoIdeia, areaIdeia;
 			
 			Console.Write("Digite o nome da sua ideia >> ");
@@ -28,6 +30,10 @@ class MainClass {
 
 			Console.Write("Deseja cadastrar mais? s/n >> ");
 			continuar = char.Parse(Console.ReadLine());
+
+			campanha.addIdeia(novaIdeia);
 		}
+
+		Console.WriteLine("\n\n{0}", campanha.exibeIdeias());
   }
 }

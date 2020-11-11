@@ -25,13 +25,13 @@ class Ideia {
 		return donoIdeia;
 	}
 
-	public string GetTitulo() {
+	public string getTitulo() {
 		return titulo;
 	}
-	public string GetDescricao() {
+	public string getDescricao() {
 		return descricao;
 	}
-	public string GetArea() {
+	public string getArea() {
 		return area;
 	}
 
