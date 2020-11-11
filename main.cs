@@ -2,7 +2,7 @@ using System;
 
 class MainClass {
 	public static void Main (string[] args) {
-    Console.WriteLine("Seja bem-vindo(a)!");
+    Console.WriteLine("\n\nSeja bem-vindo(a)!\n\n");
 
 		Votar campanha = new Votar();
 
@@ -11,13 +11,17 @@ class MainClass {
 
 		char continuar = 's';
 		while (continuar == 's') {
-			Ideia novaIdeia = new Ideia();
-			novaIdeia.cadastraIdeia(novaIdeia, novoUsuario);
+			try {
+				Ideia novaIdeia = new Ideia();
+				novaIdeia.cadastraIdeia(novaIdeia, novoUsuario);
 
-			campanha.addIdeia(novaIdeia);
+				campanha.addIdeia(novaIdeia);
 
-			Console.Write("Deseja cadastrar mais? s/n >> ");
-			continuar = char.Parse(Console.ReadLine());
+				Console.Write("\n\nDeseja cadastrar mais? s/n >> ");
+				continuar = char.Parse(Console.ReadLine());
+			} catch (FormatException) {
+				Console.WriteLine("Digite uma opção válida (s/n)");
+			}
 		}
 		
 		Console.WriteLine("\n\n{0}", campanha.exibeIdeias());
