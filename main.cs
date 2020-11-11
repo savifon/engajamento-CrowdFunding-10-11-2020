@@ -21,5 +21,10 @@ class MainClass {
 		}
 		
 		Console.WriteLine("\n\n{0}", campanha.exibeIdeias());
+
+		campanha.Votacao();
+
+		Console.WriteLine("\n\nA IDEIA VENCEDORA FOI: {0}\n\n", campanha.IdeiaVencedora().getTitulo());
+
   }
 }
