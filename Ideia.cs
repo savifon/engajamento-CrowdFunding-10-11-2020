@@ -44,7 +44,10 @@ class Ideia {
 	}
 
 	private void atualizaIdeia(string t, string d, string a, Usuario u) {
-
+		titulo = t;
+		descricao = d;
+		area = a;
+		donoIdeia = u;	
 	}
 
 	public void SetVotos(int n) {
