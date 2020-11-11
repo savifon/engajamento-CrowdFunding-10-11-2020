@@ -11,4 +11,9 @@ class Usuario {
 		nome = n;
 		idade = i;
 	}
+
+	public void atualizarUsuario(string n, int i) {
+		nome = n;
+		idade = i;
+	}
 }

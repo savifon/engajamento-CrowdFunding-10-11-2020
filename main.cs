@@ -6,14 +6,22 @@ class MainClass {
 
 		Votar campanha = new Votar();
 
-		string nomeUsuario;
-		int idadeUsuario;
-
-		Console.Write("Digite o seu nome >> ");
-		nomeUsuario = Console.ReadLine();
-		Console.Write("Digite a sua idade >> ");
-		idadeUsuario = int.Parse(Console.ReadLine());
-		Usuario novoUsuario = new Usuario(nomeUsuario, idadeUsuario);
+		Usuario novoUsuario = new Usuario();
+		bool cadastrou = false;
+		while (!cadastrou) {
+			string nomeUsuario;
+			int idadeUsuario;
+			try {
+				Console.Write("Digite o seu nome >> ");
+				nomeUsuario = Console.ReadLine();
+				Console.Write("Digite a sua idade >> ");
+				idadeUsuario = int.Parse(Console.ReadLine());
+				novoUsuario.atualizarUsuario(nomeUsuario, idadeUsuario);
+				cadastrou = true;
+			} catch (FormatException) {
+				Console.WriteLine("Você digitou um texto onde deveria ser número. Tente novamente.");
+			}
+		}
 
 		char continuar = 's';
 		while (continuar == 's') {
