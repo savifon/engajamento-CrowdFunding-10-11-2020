@@ -4,6 +4,8 @@ using System.Collections.Generic;
 //Responsavel por calcular e rankear as ideias
 class Votar {
 	private List<Ideia> ideias;
+	private Ideia ideiaUm, ideiaDois, ideiaTres;
+	private int totalVotos;
 
 	public Votar() {
 		ideias = new List<Ideia>();
@@ -13,11 +15,14 @@ class Votar {
     ideias.Add(i);
   }
 
+	public int getTotalVotos() {
+		return totalVotos;
+	}
+
 	public string exibeIdeias() {
 		string txtIdeias = "";
 
 		for (int i=0; i<ideias.Count; i++) {
-
 			txtIdeias += $"*******************\n***IDEIA [{i+1}] - {ideias[i].getTitulo()}***\n***DESCRIÇÃO: {ideias[i].getDescricao()}\n***ÁREA DE ATUAÇÃO: {ideias[i].getArea()}\n*******************\n";
 		}
 
@@ -49,6 +54,8 @@ class Votar {
 				ideias[voto-1].SetVotos(1);
 				Console.WriteLine(exibeVotosIdeias());
 
+				totalVotos += 1;
+
 			} catch (FormatException) {
 				Console.WriteLine("Você digitou um texto onde deveria ser número. Tente novamente.");
 			} catch (ArgumentOutOfRangeException) {
@@ -59,7 +66,22 @@ class Votar {
 		}
 	}
 
-	public Ideia IdeiaVencedora(){ 
+	/*public Ideia tresIdeias() {
+			ideiaUm =  ideias[0];
+			ideiaDois =  ideias[0];
+			ideiaTres =  ideias[0];
+
+			for (int i=0; i<ideias.Count; i++){
+				if (ideias[i].GetVotos() > maisVotos.GetVotos()) {
+					ideiaUm = ideias[i];
+				}
+			}
+			
+			return maisVotos;
+		}
+	}*/
+
+	public Ideia IdeiaVencedora() {
 		Ideia maisVotos = ideias[0];
 
 		for (int i=0; i<ideias.Count; i++){

@@ -3,10 +3,12 @@ using System;
 class Usuario {
 	private string nome;
 	private int idade;
+	private double carteira;
 
 	public Usuario() {
 		nome = "Novo usuário";
 		idade = 0;
+		carteira = 0;
 	}
 	
 	public Usuario (string n, int i) {
@@ -40,5 +42,9 @@ class Usuario {
 				Console.WriteLine("Você digitou valores em branco. Tente novamente.");
 			}
 		}
+	}
+
+	public void setCarteira(double c) {
+		carteira += c;
 	}
 }

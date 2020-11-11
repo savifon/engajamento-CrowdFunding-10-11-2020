@@ -28,7 +28,10 @@ class MainClass {
 
 		campanha.Votacao();
 
-		Console.WriteLine("\n\nA IDEIA VENCEDORA FOI: {0}\n\n", campanha.IdeiaVencedora().getTitulo());
+		Ideia ganhadora = campanha.IdeiaVencedora();
+		Console.WriteLine("\n\nA IDEIA VENCEDORA FOI: {0}\n\n", ganhadora.getTitulo());
+
+		novoUsuario.setCarteira(((ganhadora.GetVotos()/campanha.getTotalVotos())^2)*30);
 
   }
 }
