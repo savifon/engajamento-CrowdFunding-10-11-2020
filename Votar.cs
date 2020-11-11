@@ -19,14 +19,14 @@ class Votar {
 		return totalVotos;
 	}
 
-	public string exibeIdeias() {
+	public void exibeIdeias() {
 		string txtIdeias = "";
 
 		for (int i=0; i<ideias.Count; i++) {
 			txtIdeias += $"*******************\n***IDEIA [{i+1}] - {ideias[i].getTitulo()}***\n***DESCRIÇÃO: {ideias[i].getDescricao()}\n***ÁREA DE ATUAÇÃO: {ideias[i].getArea()}\n*******************\n";
 		}
 
-		return txtIdeias;
+		Console.WriteLine(txtIdeias);
 	}
 
 	private string exibeVotosIdeias() {

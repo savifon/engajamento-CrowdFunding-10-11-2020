@@ -36,6 +36,8 @@ class Usuario {
 				}
 				u.atualizarUsuario(nomeUsuario, idadeUsuario);
 				cadastrou = true;
+
+				Console.Clear();
 			} catch (FormatException) {
 				Console.WriteLine("Você digitou um texto onde deveria ser número. Tente novamente.");
 			} catch (ArgumentException) {

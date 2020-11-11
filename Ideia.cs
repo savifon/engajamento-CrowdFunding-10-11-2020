@@ -25,7 +25,7 @@ class Ideia {
 		string tituloIdeia, descricaoIdeia, areaIdeia;
 		
 		try {
-			Console.Write("\n\nDigite o nome da sua ideia >> ");
+			Console.Write("Digite o nome da sua ideia >> ");
 			tituloIdeia = Console.ReadLine();
 			Console.Write("Descreva a sua ideia >> ");
 			descricaoIdeia = Console.ReadLine();
@@ -37,6 +37,8 @@ class Ideia {
 			}
 
 			i.atualizaIdeia(tituloIdeia, descricaoIdeia, areaIdeia, u);
+
+			Console.Clear();
 
 		} catch (ArgumentException) {
 			Console.WriteLine("Você digitou valores em branco. Tente novamente.");
